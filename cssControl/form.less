@@ -1,0 +1,52 @@
+input,button{font-size:14px;}
+button{cursor: pointer;}
+input,textarea{
+  .placeholder;
+}
+
+/*
+定义输入框的placeholder颜色
+*/
+.placeholder(@color:#7F85A3){
+  &::-webkit-input-placeholder {
+    color: @color;
+  }
+  &:-moz-placeholder {/* Firefox 18- */
+    color: @color;
+  }
+  &::-moz-placeholder{/* Firefox 19+ */
+    color: @color;
+  }
+  &:-ms-input-placeholder {
+    color: @color;
+  }
+}
+/*input输入框
+@h:输入框高度
+@p:文本框左padding(动态设置图标)
+*/
+.input(@padding:18px,@h:40px){height:@h;padding:@padding;.round(3px);background-color:@gray-bg;border:1px solid @gray-border;.box-shadow(0,1px,3px,rgba(127, 133, 163, 0.53) inset);color:@gray;
+  &:focus{background: #ffffff;.transition(.4s);}
+}
+
+/*下拉框*/
+.select-box(@w,@h,@lh){.wh(@w,@h,@lh);position: relative;
+  .icon{position: absolute;right:12px;font-size:22px;}
+  .form-control{.ellipse;padding-left:12px;padding-right:42px;border:1px solid @gray-border;cursor: pointer;}
+
+  ul{display:none;background:#ffffff;.wh(100%,auto);position: absolute;overflow:hidden;border:1px solid @gray-border;border-top:0;z-index: 999;
+    li{padding:8px 12px;.wh(100%,auto,normal);border-bottom:1px solid @gray-border;
+      &:last-child{border-bottom: 0;}
+      &:hover{background:@gray-bg;color:@gray;}
+    }
+  }
+}
+
+/*单复选框*/
+.check-box(@w:20px,@h:20px){.wh(@w,@h);border:1px solid @gray-border;display:block;float: left;overflow: hidden;
+  .check{.wh(100%,100%);display:none;}
+  input{display:none;}
+  input:checked+.check{display:block;}
+}
+
+
