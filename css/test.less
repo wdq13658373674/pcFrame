@@ -1,0 +1,82 @@
+@import "../cssControl/control";
+
+/*----------------自适应宽度下拉框*/
+.auto-select{.select-box(auto,35px,35px);min-width:200px;float: left;}
+/*----------------固定宽度下拉框*/
+.fixed-select{.select-box(200px,35px,35px);}
+
+/*---------------输入框*/
+.input-group{position: relative;
+  .icon{position: absolute;left:5px;line-height:40px;}
+  input{.input(8px 10px 8px 26px);width:200px;
+    &.pl10{padding-left:10px;}//无图标添加该class
+  }
+
+  &.active{
+    input{border-color:@red;.placeholder(@red);background: #ffffff;}
+  }
+}
+/*错误提示*/
+.err-tip{.wh(100%,30px,30px);color:@red;font-size: 12px;}
+
+/*-------------单选框*/
+.radio{margin-top:10px;
+  .icon-xihuan{color:red;}
+  .check-box{.check-box(20px,20px);line-height:20px;.round(50%);margin-right:10px;
+    .err{background: red;}//自定义选择图标
+  };
+}
+/*-------------复选框*/
+.checkbox{margin-top:10px;
+  .icon-fuxuangougou{color:green;}
+  .check-box{.check-box(20px,20px);line-height:20px;.round(3px);margin-right:5px;
+    .suc{background: green;}//自定义选择图标
+    .err{background: red;}//自定义选择图标
+  };
+}
+/*-------------按钮*/
+.btn-submit{.btn-red-full();width:200px;}
+.btn-save{.btn-red-empty();width:200px;}
+
+/*-------------tab-menu*/
+.tab-menu{z-index:10;height:50px;
+  .tab{.wh(100px,50px,50px);text-align: center;display:block;float:left;background: #e5e5e5;box-sizing: content-box;
+    &.active{background: #ffffff;margin-bottom: -3px;}
+  }
+}
+.tab-box{border:1px solid @gray-border;
+  .box{display:none;min-height:500px;padding:10px;background: #ffffff;
+    &.active{display: block;}
+  }
+}
+
+/*-------------check-list*/
+.check-list{margin-top:10px;display: block;
+  input{display:none;}
+  .check{border:1px solid @gray-border;text-align: center;font-size:16px;.round(5px);
+    &:hover{border:1px solid @red;.box-shadow(0,5px,4px 0,#c3cad8);}
+  }
+
+  input:checked{
+    &+.check{border:2px solid @red;.box-shadow(0,5px,4px 0,#c3cad8);line-height:65px;background: url("../images/icon/suc.png") right bottom no-repeat;  }
+  }
+}
+.check.box{.wh(216px,69px,67px);}
+
+/*------------面包屑*/
+.crumbs{
+  color: @gray;
+  a{
+    font-size: 12px;
+    color: @gray;
+    &:hover{
+      padding-bottom: 1px;
+      border-bottom: 1px solid @gray;
+    }
+  }
+  span{
+    font-size: 12px;
+  }
+}
+
+
